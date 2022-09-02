@@ -451,11 +451,13 @@ body{
     .reset{
         height: 40px;
         right: 50px;
+        width: 100px;
        
     }
     .rules{
         height: 40px;
         left: 50px;
+        width: 100px;
     }
     .div-picked {
         padding: 0 5px;
