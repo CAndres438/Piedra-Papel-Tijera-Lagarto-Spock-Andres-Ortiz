@@ -345,7 +345,7 @@ body{
     }
 }
 
-/* Adptación Pantalla  Intermedia 375px */
+/* Adptación Pantalla  768px */
 
 @media only screen and (max-width: 768px){
     body{
