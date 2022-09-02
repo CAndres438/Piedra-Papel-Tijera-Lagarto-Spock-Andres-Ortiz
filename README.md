@@ -69,4 +69,5 @@ Spock vence a Roca
 # 📚 Reto Codificado por:
 
 - [Carlos Andres Ortiz Peña](https://github.com/CAndres438) Desarrollador.
+- [Linkedin Andres Ortiz](https://www.linkedin.com/in/carlos-andres-ortiz-programmer/).
 
