@@ -47,6 +47,24 @@ live server en vs Code
 
 - [Piedra Papel o Tijera Lagarto Spock](https://piedra-papel-tijera-lagarto-spock-andres-ortiz.vercel.app/)
 
+## A tener en cuenta:
+
+- Recuerda que el puntaje con el que se parte es 0.
+- No puedes restar puntaje a 0.
+- Para marcar victorias se manejan estas reglas:
+
+Tijeras vencen a Papel
+Papel vence a Roca
+Roca vence a Lagarto
+Spock vence a Tijeras
+Tijeras vencen a Lagarto
+Papel vence a Spock
+Roca vence a Tijeras
+Lagarto vence Papel
+Spock vence a Roca
+
+- Igual también puedes reiniciar el marcador o visualizar las reglas.
+
 
 # 📚 Reto Codificado por:
 
