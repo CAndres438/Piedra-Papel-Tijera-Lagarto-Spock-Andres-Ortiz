@@ -450,14 +450,15 @@ body{
     /*Reglas*/
     .reset{
         height: 40px;
-        right: 50px;
+        left: 50px;
         width: 100px;
        
     }
     .rules{
         height: 40px;
-        left: 50px;
+        right: 50px;
         width: 100px;
+        bottom: 60px;
     }
     .div-picked {
         padding: 0 5px;
