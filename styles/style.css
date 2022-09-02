@@ -351,6 +351,9 @@ body{
     body{
         padding: 30px 10px 5px;
     }
+    html{
+        height: 100%;
+    }
 
     /*Links de referencia*/
     .attribution{
