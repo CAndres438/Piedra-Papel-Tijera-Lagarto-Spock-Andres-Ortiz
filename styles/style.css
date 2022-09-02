@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap'); /*Fuente guia de estilos*/
+
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    min-height:100%;
+ }
+img{
+    max-width:100%;
+}
+button:focus, button:active{
+    outline: 0;
+}
+button{
+    font-family: 'Barlow Semi Condensed', sans-serif;  /*Valor Guia de estilos reto*/
+    text-transform: uppercase;
+
+}
+/*colores*/
+:root{
+    --Scissors-Gradient: hsl(39, 89%, 49%), hsl(40, 84%, 53%);  /*Variables de los colores más usados y dispuestos en el reto*/
+    --Paper-Gradient: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
+    --Rock-Gradient: hsl(349, 71%, 52%), hsl(349, 70%, 56%);
+    --Lizard-Gradient: hsl(261, 73%, 60%), hsl(261, 72%, 63%);
+    --Cyan: hsl(189, 59%, 53%), hsl(189, 58%, 57%);
+    --Dark-Text: hsl(229,25%,31%);
+    --Score-Text: hsl(229,64%,46%);
+    --Header-Outline: hsl(217,16%,45%);
+    --Background: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+    --White: #fff;
+}
+/*cuerpo*/
+body{
+    margin: 0;
+    padding: 45px 5px 5px;
+    font-family: 'Barlow Semi Condensed', sans-serif; /*Valor Guia de estilos reto*/
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    background: radial-gradient(circle at top, var(--Background) );  /*Valor Guia de estilos reto*/
+}
+.main-container{
+    align-items: center;
+}
+/* Links Guia de estilo*/
+.attribution { font-size: 11px; text-align: center; margin-top: 10px;}
+.attribution a { color: hsl(228, 45%, 44%); }
+/*Flex horizontal y vertical*/
+.rows{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.columns{
+    display: flex;
+    flex-flow: column nowrap;
+}
+/*Resultados de Juego Ocultos*/
+.hidden{
+    display: none !important;
+}
+/*Bloque principal de puntaje y título*/
+.title-game{
+    justify-content: space-between;
+    width: 100%;
+    max-width: 700px;
+    border: 2px solid var(--Header-Outline);
+    border-radius: 15px;
+    padding: 15px 22px 15px 31px;
+    margin: 0 0 25px;
+}
+.title-game ul{
+    list-style-type: none;
+    padding: 0;
+    font-size: 28px;
+    line-height: 0.8;
+    margin: 2px 0 0;
+}
+.score{
+    background: var(--White);
+    width: 150px;
+    border-radius: 10px;
+    align-items: center;
+    height: 115px;
+    padding: 14px 0 0;
+}
+.score-principal {
+    color: var(--Score-Text);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 2px;
+    letter-spacing: 1px;
+}
+.score-counter{
+    color: var(--Dark-Text);
+    font-size: 63px;
+    line-height: .9;
+    font-weight: 700;
+}
+/* Selección del juego */
+.object-choice{
+    background: center / contain no-repeat url(https://res.cloudinary.com/cortiz/image/upload/v1662051122/La_teoria_big_bang_juego/bg-pentagon_bn5cie.svg);
+    background-size: 320px;                         /*Servidor Cloudinary*/
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    height: 447px; 
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    height: 140px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    position: absolute;  
+}
+.card img{
+    position: relative;
+    z-index: 2;
+}
+.card:before{
+    content: '';
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    box-shadow: inset 0 3px 5px var(--Dark-Text);
+    background: rgba(255, 255, 255, 1);
+    position: absolute;
+    z-index: 1;
+    transition: .3s ease, box-shadow .3s ease;  /*Retiro del background*/
+}
+.card:hover:before{
+    background: rgba(255, 255, 255, 0);
+    box-shadow: none;
+}
+.card.scissors{
+    background: linear-gradient(var(--Scissors-Gradient));
+    box-shadow: 0px 6px 0px 0px hsl(28, 75%, 44%);
+    top: 0;
+    left: 278px;
+}
+.card.paper{
+    background: linear-gradient(var(--Paper-Gradient));
+    box-shadow: 0px 6px 0px 0px hsl(229, 62%, 34%);
+    top: 130px;
+    right: 115px;
+}
+.card.rock{
+    background: linear-gradient(var(--Rock-Gradient));
+    box-shadow: 0px 6px 0px 0px hsl(343, 70%, 30%);
+    bottom: 0;
+    right: 178px;
+}
+.card.lizard{
+    background: linear-gradient(var(--Lizard-Gradient));
+    box-shadow: 0px 6px 0px 0px hsl(259, 48%, 38%);
+    bottom: 0;
+    left: 180px;
+}
+.card.spock{
+    background: linear-gradient(var(--Cyan));
+    box-shadow: 0px 6px 0px 0px hsl(197, 54%, 36%);
+    top: 130px;
+    left: 115px;
+}
+/*Sección de Seleción*/
+.div-picked{
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    padding: 30px 10px;
+}
+.div-picked p{
+    font-size: 23px;
+    line-height: 1;
+    margin: 0 0 66px;
+}
+.div-picked .card{
+    position: static;
+    height: 300px;
+    width: 295px;
+}
+.div-picked .card:before{
+    width: 230px;
+    height: 221px;
+}
+.div-picked .card img{
+    width: 100px;
+}
+.choice{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+/*Resultados del Juego*/
+.result{
+    white-space: nowrap;
+    font-size: 30px;
+}
+.result .title{
+    margin: 53px 0 17px;
+    font-size: 58px;
+    line-height: 1;
+}
+.result button {
+    border: 1px solid var(--Header-Outline);
+    padding: 14px 63px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(to left, var(--White) 50%, transparent 50%);
+    background-size: 250% 100%;
+    background-position: right bottom;
+    transition: .3s ease-out, color .3s ease-out;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.result button:hover{
+    background-position: left bottom;
+    color: var(--White);
+}
+/* Sección de Reglas (Modal)*/
+.modal-bg{
+    display: none;   /* Sin aparición hasta presionar el botón valor:none botón reglas*/
+}
+.modal{
+    display: none;
+}
+.modal.active,.modal-bg.active{
+    display:block;
+}
+
+.reset{
+   border: 1px solid var(--Header-Outline);
+   padding: 5px 25px;               /*Posicionamiento individual*/
+   border-radius: 5px;
+   position: absolute;
+   right:20px;                      
+   bottom:60px;
+   cursor: pointer;
+   color:var(--White);
+   background: linear-gradient(to left, transparent 50%, var(--White) 50%); /*gradiente*/
+   background-size: 250% 100%;
+   background-position: right bottom;
+   transition: .3s ease-out, color .3s ease-out;
+}
+
+.reset:hover{
+    background-position: left bottom;
+    color: var(--Score-Text);
+
+}
+.rules{
+   border: 1px solid var(--Header-Outline);
+   padding: 5px 25px;               /*Posicionamiento individual*/
+   border-radius: 5px;
+   position: absolute;
+   right:20px;                      /*Aparición en esquina inferior derecha*/
+   bottom:20px;
+   cursor:pointer;
+   color:var(--White);
+   background: linear-gradient(to left, transparent 50%, var(--White) 50%); /*gradiente*/
+   background-size: 250% 100%;
+   background-position: right bottom;
+   transition: .3s ease-out, color .3s ease-out;
+}
+.rules:hover {
+    background-position: left bottom;
+    color: var(--Score-Text);
+}
+
+/*Aparición del modal- como se muestra*/
+.modal-bg{
+    display: none;
+    position: absolute;
+    top: 0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:2;
+    background: rgba(0,0,0,50%);
+}
+.modal{
+    display:none;
+    position: absolute;
+    z-index: 3;
+    background: var(--White);
+    width:100%;
+    max-width: 400px;
+    padding: 20px 20px 20px;
+    border-radius: 10px;
+    top:150px;
+}
+.modal .close{
+    position: absolute;   /*Equis de Cierre*/
+    right: 30px;
+    cursor: pointer;
+}
+.modal .title{
+    color: var(--Dark-Text);
+    font-weight: 600;
+    font-size: 35px;
+}
+.modal .content{
+    text-align:center;    /*Contenido en este caso imagen instructivo*/
+}
+.attribution{
+    padding: 5px 25px;
+    border-radius: 5px;
+    position: absolute;
+    left:20px;
+    bottom:20px;
+    text-align: center;
+}
+
+
+/* Pantallas media  - Desktop: 1366px */
+
+@media only screen and (max-width: 1366px){
+    .div-picked .card{
+        width:145px;
+        height:150px;
+    }
+    .div-picked .card img{
+        width:55px;
+    }
+    .div-picked .card:before{
+        width: 115px;
+        height: 115px;
+    }
+    .result .title{
+        font-size:40px;
+    }
+    .result button{
+        padding: 14px 40px;
+    }
+}
+
+/* Adptación Pantalla  Intermedia 375px */
+
+@media only screen and (max-width: 768px){
+    body{
+        padding: 30px 10px 5px;
+    }
+
+    /*Links de referencia*/
+    .attribution{
+        height: 40px;
+        bottom:50px;
+        left: inherit;
+    }
+    /*Bloque principal*/
+    .title-game{
+        padding: 12px 12px 12px 24px;
+        border-radius: 5px;
+        margin: 0 0 90px;
+    }
+    .score{
+        width: 80px;
+        border-radius: 5px;
+        height: 72px;
+        padding: 10px 0 0;
+    }
+    .score-principal{
+        font-size: 11px;
+    }
+    .score-counter{
+        font-size:39px;
+    }
+
+    .title-game ul{
+        font-size: 12px;
+        line-height: 0.9;
+        margin: 11px 0 0;
+    }
+
+    /*Selecciones*/
+    .object-choice{
+        height: 308px;
+        background-size: 220px;
+        max-width: 375px;
+    }
+    .object-choice .card{
+        width: 100px;
+        height: 100px;
+    }
+    .object-choice .card:before{
+        width: 75px;
+        height: 75px;
+    }
+    .object-choice .card img{
+        width:35px;
+    }
+    .card.scissors{
+        top: 0;
+        left: 140px;
+    }
+    .card.paper{
+        top: 80px;
+        right: 15px;
+    }
+    .card.rock{
+        bottom: 4px;
+        right: 52px;
+    }
+    .card.lizard{
+        bottom: 0;
+        left: 55px;
+    }
+    .card.spock{
+        top: 86px;
+        left: 20px;
+    }
+    .div-picked .card{
+        width: 145px;
+        height:150px;
+    }
+    .div-picked .card img{
+        width: 55px;
+    }
+    .div-picked .card:before{
+        width: 115px;
+        height: 115px;
+    }
+    .result{
+        position: absolute;
+        top: 360px;
+        left: 0;
+        right: 0;
+    }
+    .result .title{
+        font-size: 57px;
+        margin: 53px 0 19px;
+    }
+    .result button{
+        padding: 14px 60px 13px;
+        font-size: 17px;
+        letter-spacing: 2px; 
+    }
+
+    /*Reglas*/
+    .reset{
+        height: 40px;
+        right: 50px;
+        bottom: 20px;
+    }
+    .rules{
+        height: 40px;
+        left: 50px;
+    }
+    .div-picked {
+        padding: 0 5px;
+    }
+    .div-picked p{
+        font-size: 16px;
+        line-height: 1;
+        margin: 0 0 10px;
+        letter-spacing: 1.5px;
+    }
+
+
+    /*Modal*/
+    .modal {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        flex-flow: column;
+        align-items: center;
+        max-width: inherit;
+    }
+    .modal.active {
+        display: flex;
+    }
+    .close {
+        bottom: 70px;
+        left: 225px;
+    }
+    .modal .title {
+        margin: 30px 0 60px;
+    }
+}
+

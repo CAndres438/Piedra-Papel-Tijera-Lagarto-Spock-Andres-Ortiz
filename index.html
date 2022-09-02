@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Las imagenes están contenidas en media library personal Cloudinary cortiz= Carlos Ortiz-->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://res.cloudinary.com/cortiz/image/upload/v1662051107/La_teoria_big_bang_juego/favicon-32x32_eduqcr.png">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Piedra, Papel o Tijera versión La Teoría del Big Bang</title>
+</head>
+<body>
+    <div class="columns main-container">
+    <!-- Bloque de entrada; Título del juego y Marcador de Puntaje-->
+    <section class="title-game rows">
+        <ul>
+            <li>Piedra</li>
+            <li>Papel</li>
+            <li>Tijeras</li>
+            <li>Lagarto</li>
+            <li>Spock</li>
+        </ul>
+        <div class="score columns">
+           <div class="score-principal">Puntaje</div> 
+           <div class="score-counter">0</div>
+        </div>
+    </section>
+
+    <!--Selección de objeto/personaje de juego-->
+    <section class="object-choice">
+        <div class="card scissors"><img src="https://res.cloudinary.com/cortiz/image/upload/v1662051124/La_teoria_big_bang_juego/icon-scissors_cmp8me.svg" alt="imagen de una mano simulando forma de tijeras"></div>
+        <div class="card paper"><img src="https://res.cloudinary.com/cortiz/image/upload/v1662051122/La_teoria_big_bang_juego/icon-paper_qfozs0.svg" alt="imagen de la palma de una mano simulando el papel"></div>
+        <div class="card rock"><img src="https://res.cloudinary.com/cortiz/image/upload/v1662051122/La_teoria_big_bang_juego/icon-rock_wcuol8.svg" alt="imagen de un puño cerrado simulando la roca"></div>
+        <div class="card lizard"><img src="https://res.cloudinary.com/cortiz/image/upload/v1662051122/La_teoria_big_bang_juego/icon-lizard_hdtbfq.svg" alt="imagen de la sombra de un lagarto"></div>
+        <div class="card spock"><img src="https://res.cloudinary.com/cortiz/image/upload/v1662051124/La_teoria_big_bang_juego/icon-spock_naizxf.svg" alt="imagen de una mano simulando la forma de las orejas de Spock (Star Trek)"></div>
+    </section>
+
+    <!--  Resultados ocultos en las selecciones del juego-->
+    <div class="div-picked rows hidden">
+        <div class="choice columns">
+            <p>Tu selección</p>
+            <div class="user-object-pick">
+
+            </div>
+        </div>
+        <div class="result">
+            <div class="title">Tu pierdes</div>
+            <button>Jugar Nuevamente</button>
+        </div>
+        <div class="choice columns">
+            <p>Selección de la máquina</p>
+            <div class="pc-object-pick">
+
+            </div>
+        </div>
+    </div>
+    <!-- Reglas del Juego Modal-->
+    <button class="rules">Reglas</button>
+    <div class="modal-bg"></div>
+    <div class="modal">
+        <span class="close">
+            <img src="https://res.cloudinary.com/cortiz/image/upload/v1662051122/La_teoria_big_bang_juego/icon-close_vfx3dx.svg" alt="ícono de cierre (equis)">
+        </span>
+        <div class="title">Reglas</div>
+        <div class="content">
+            <img src="https://res.cloudinary.com/cortiz/image/upload/v1662051124/La_teoria_big_bang_juego/image-rules-bonus_gpf8cf.svg" alt="Imagen Representación de las reglas del juego">
+        </div>
+    </div>
+    <button class="reset">Borrar</button>
+
+
+
+
+
+
+    <div class="attribution">
+        <b>Codificado por: </b><a href="https://github.com/CAndres438">Carlos Andrés Ortiz Peña | CAndres438</a>
+    </div>
+</div>
+
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
+
